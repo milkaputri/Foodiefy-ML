@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.foodiefy.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_ai"
+        android:name="com.example.foodiefy.ui.ai.AIFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_ai" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.foodiefy.ui.history.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.foodiefy.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_settingFragment_to_profileFragment"
+            app:destination="@id/navigation_profile" />
+
+        <action
+            android:id="@+id/action_settingFragment_to_aboutUsFragment"
+            app:destination="@id/navigation_aboutUs" />
+
+        <action
+            android:id="@+id/action_settingFragment_to_termsFragment"
+            app:destination="@id/navigation_terms" />
+
+        <action
+            android:id="@+id/action_logout"
+            app:destination="@id/navigation_signIn" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.foodiefy.ui.setting.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_aboutUs"
+        android:name="com.example.foodiefy.ui.setting.AboutUsFragment"
+        android:label="@string/title_aboutus"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/navigation_terms"
+        android:name="com.example.foodiefy.ui.setting.TermsFragment"
+        android:label="@string/title_TC"
+        tools:layout="@layout/fragment_terms" />
+
+    <fragment
+        android:id="@+id/navigation_awal"
+        android:name="com.example.foodiefy.ui.awal.AwalFragment"
+        android:label="@string/title_awal"
+        tools:layout="@layout/fragment_awal">
+        <action
+            android:id="@+id/action_awalFragment_to_signInFragment"
+            app:destination="@id/navigation_signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_signIn"
+        android:name="com.example.foodiefy.ui.signin.SignInFragment"
+        android:label="@string/title_signIn"
+        tools:layout="@layout/fragment_sign_in">
+    </fragment>
+</navigation>
